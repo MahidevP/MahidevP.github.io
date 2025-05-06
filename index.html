@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Timer App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Advanced Timer App</h1>
+  <button id="darkModeBtn" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+
+  <div class="timer-form">
+    <input type="text" id="timerLabel" placeholder="Label (e.g. Study)">
+    <input type="text" id="timerName" placeholder="Timer Name">
+    <select id="category">
+      <option value="work">Work</option>
+      <option value="study">Study</option>
+      <option value="exercise">Exercise</option>
+      <option value="break">Break</option>
+    </select>
+    <select id="priority">
+      <option value="low">Low Priority</option>
+      <option value="medium">Medium Priority</option>
+      <option value="high">High Priority</option>
+    </select>
+    <input type="number" id="hours" placeholder="Hours" min="0">
+    <input type="number" id="minutes" placeholder="Minutes" min="0" max="59">
+    <input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
+    <label><input type="checkbox" id="repeatTimer"> Repeat Timer</label>
+    <button onclick="startTimer()">Start Timer</button>
+    <button onclick="resetAllTimers()">Reset All Timers</button>
+  </div>
+
+  <div id="quickTimers">
+    <button onclick="quickStartTimer(300)">5 Min</button>
+    <button onclick="quickStartTimer(1800)">30 Min</button>
+    <button onclick="quickStartTimer(3600)">1 Hour</button>
+  </div>
+
+  <div id="activeTimers">
+    <h2>Active Timers</h2>
+  </div>
+
+  <div id="history">
+    <h2>Timer History</h2>
+    <ul id="historyList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
